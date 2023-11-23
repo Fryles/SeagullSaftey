@@ -4,7 +4,7 @@ A prject created for ART101 by Group 2
 
 ## Demo
 
-Insert gif or link to demo...
+[Click here to view the project](https://fryles.github.io/art101final/)
 
 ## Features
 
