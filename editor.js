@@ -46,7 +46,6 @@ function Node(
 	</div>	`);
 	this.element.css(this.css);
 	this.element.find(".seagullNodeInfo").css(this.floatCss);
-	``;
 	this.update = function () {
 		this.floatCss = {
 			left: `${this.floatX}px`,
@@ -77,6 +76,8 @@ function Node(
 function makeEditable(n) {
 	//get node object from array
 	let nobj = nodes.find((n1) => n1.id == n.attr("id"));
+
+
 	if (!nobj) {
 		alert("Bad nodes, please remake or check ids")
 		return;
@@ -94,6 +95,7 @@ function makeEditable(n) {
 		},
 		distance: 5,
 	});
+
 	//set click to select
 	n.on("click", function () {
 		if ($(this).hasClass("selected")) {
@@ -125,6 +127,7 @@ function makeEditable(n) {
 		n.desc = n.find(".seagullNodeDesc").text();
 		n.draggable("enable");
 	});
+
 }
 
 /**
@@ -156,56 +159,10 @@ function download(data, filename, type) {
 }
 
 function spawnEditableNode() {
-	var n = new Node("Node", "Description", mouseX - 16, mouseY - 16, 24, 0, 0);
-	n.spawn();
+	var n = new Node("Node", "Description", mouseX - 64, mouseY - 16, 24, 0, 0);
 	nodes.push(n);
-	n.element.removeClass("seagullNode");
-	n.element.addClass("seagullNodeEditable");
-	$(".selected").removeClass("selected");
-	n.element.addClass("selected");
-	selectedNode = n;
-	//set opacity
-	n.element.find(".seagullNodeInfo").css("opacity", 1);
-	//set draggable
-	n.element.draggable({
-		drag: function (event, ui) {
-			n.posx = ui.position.left;
-			n.posy = ui.position.top;
-			n.update();
-		},
-		distance: 5,
-	});
-	n.element.on("click", function () {
-		if ($(this).hasClass("selected")) {
-			return;
-		}
-		$(".selected").trigger("blur");
-		$(".selected").removeClass("selected");
-		n.element.addClass("selected");
-		selectedNode = n;
-		console.log("selected: ");
-		console.log(selectedNode);
-	});
-	//set double click to edit
-	n.element.on("dblclick", function () {
-		//TODO make dbl click focus on target
-		n.element.draggable("disable");
-		//set contenteditable
-		n.element.find(".seagullNodeName").attr("contenteditable", true);
-		n.element.find(".seagullNodeDesc").attr("contenteditable", true);
-		n.element.find(".seagullNodeName").focus();
-	});
-	//set blur to save
-	n.element.on("blur", function () {
-		//set contenteditable
-		n.element.find(".seagullNodeName").attr("contenteditable", false);
-		n.element.find(".seagullNodeDesc").attr("contenteditable", false);
-		//update node
-		n.name = n.element.find(".seagullNodeName").text();
-		n.desc = n.element.find(".seagullNodeDesc").text();
-		n.element.draggable("enable");
-	});
-	return n;
+	n.spawn();
+	makeEditable(n.element);
 }
 
 function loadNodes(nodeJSON) {
@@ -223,6 +180,7 @@ function loadNodes(nodeJSON) {
 		n.spawn();
 		nodes.push(n);
 	}
+	nodeCount = nodes.length;
 }
 
 
@@ -310,9 +268,11 @@ function spawnModeToggle() {
 		$("#seagullContainer").off("dblclick");
 		//collect all nodes
 		for (var i = 0; i < nodes.length; i++) {
-			delete nodes[i].element;
 			delete nodes[i].update;
 			delete nodes[i].spawn;
+			nodes[i].name = nodes[i].element.find(".seagullNodeName").text();
+			nodes[i].desc = nodes[i].element.find(".seagullNodeDesc").text();
+			delete nodes[i].element;
 		}
 		// download(JSON.stringify(nodes), "nodes.json", "application/json");
 		console.log(nodes);

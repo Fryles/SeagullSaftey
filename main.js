@@ -25,15 +25,12 @@ function checkPosition() {
 			mobileNodeAdjustment(nodes[i]);
 		}
 	}
-	console.log("mobile: "+ mobile);
 }
 // Set event listener for media queries
 window.addEventListener('resize', checkPosition);
 
-
 // Mobile node adjustment
 function mobileNodeAdjustment(node) {
-	console.log("mobileNodeAdjustment");
 	if (mobile) {
 		node.posx = node.posx * 390/700
 		node.posy = node.posy * 390/700
@@ -43,10 +40,11 @@ function mobileNodeAdjustment(node) {
 		node.posx = node.posx * 700/390
 		node.posy = node.posy * 700/390
 	}
-	console.log(node);
 	node.update();
 }
 
+
+// MAIN
 
 //get json from file
 $.getJSON("nodes.json", function (data) {

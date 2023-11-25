@@ -1,10 +1,10 @@
 [
 	{
 			"id": "seagullNode0",
-			"name": "Node",
-			"desc": "Description",
-			"posx": 600,
-			"posy": 98,
+			"name": "Beak",
+			"desc": "Eats children",
+			"posx": 599.921875,
+			"posy": 88.59375,
 			"size": 32,
 			"floatX": 70,
 			"floatY": -40,
@@ -13,48 +13,48 @@
 					"top": "-40px"
 			},
 			"css": {
-					"left": "600px",
-					"top": "98px",
+					"left": "599.921875px",
+					"top": "88.59375px",
 					"width": "32px",
 					"height": "32px"
 			}
 	},
 	{
 			"id": "seagullNode1",
-			"name": "Node",
-			"desc": "Description",
-			"posx": 309,
-			"posy": 108,
+			"name": "Head",
+			"desc": "mstery...",
+			"posx": 308.99999999999994,
+			"posy": 108.00000000000001,
 			"size": 32,
-			"floatX": -60,
+			"floatX": -80,
 			"floatY": -40,
 			"floatCss": {
-					"left": "-60px",
+					"left": "-80px",
 					"top": "-40px"
 			},
 			"css": {
-					"left": "309px",
-					"top": "108px",
+					"left": "308.99999999999994px",
+					"top": "108.00000000000001px",
 					"width": "32px",
 					"height": "32px"
 			}
 	},
 	{
 			"id": "seagullNode2",
-			"name": "Node",
-			"desc": "Description",
+			"name": "Tail",
+			"desc": "Weapon of mass destruction",
 			"posx": 43,
-			"posy": 506,
+			"posy": 511,
 			"size": 32,
-			"floatX": -40,
+			"floatX": -70,
 			"floatY": -60,
 			"floatCss": {
-					"left": "-40px",
+					"left": "-70px",
 					"top": "-60px"
 			},
 			"css": {
 					"left": "43px",
-					"top": "506px",
+					"top": "511px",
 					"width": "32px",
 					"height": "32px"
 			}
