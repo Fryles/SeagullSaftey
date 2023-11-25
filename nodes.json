@@ -1,1 +1,62 @@
-[{"id":"seagullNode0","name":"Node","desc":"Description","posx":525,"posy":247,"size":24,"floatX":0,"floatY":0,"floatCss":{"left":"0px","top":"0px"},"css":{"left":"525px","top":"247px","width":"24px","height":"24px"}},{"id":"seagullNode1","name":"Node","desc":"Description","posx":371,"posy":316,"size":24,"floatX":0,"floatY":0,"floatCss":{"left":"0px","top":"0px"},"css":{"left":"371px","top":"316px","width":"24px","height":"24px"}},{"id":"seagullNode2","name":"Node","desc":"Description","posx":222,"posy":179,"size":24,"floatX":0,"floatY":0,"floatCss":{"left":"0px","top":"0px"},"css":{"left":"222px","top":"179px","width":"24px","height":"24px"}}]
+[
+	{
+			"id": "seagullNode0",
+			"name": "Node",
+			"desc": "Description",
+			"posx": 600,
+			"posy": 98,
+			"size": 32,
+			"floatX": 70,
+			"floatY": -40,
+			"floatCss": {
+					"left": "70px",
+					"top": "-40px"
+			},
+			"css": {
+					"left": "600px",
+					"top": "98px",
+					"width": "32px",
+					"height": "32px"
+			}
+	},
+	{
+			"id": "seagullNode1",
+			"name": "Node",
+			"desc": "Description",
+			"posx": 309,
+			"posy": 108,
+			"size": 32,
+			"floatX": -60,
+			"floatY": -40,
+			"floatCss": {
+					"left": "-60px",
+					"top": "-40px"
+			},
+			"css": {
+					"left": "309px",
+					"top": "108px",
+					"width": "32px",
+					"height": "32px"
+			}
+	},
+	{
+			"id": "seagullNode2",
+			"name": "Node",
+			"desc": "Description",
+			"posx": 43,
+			"posy": 506,
+			"size": 32,
+			"floatX": -40,
+			"floatY": -60,
+			"floatCss": {
+					"left": "-40px",
+					"top": "-60px"
+			},
+			"css": {
+					"left": "43px",
+					"top": "506px",
+					"width": "32px",
+					"height": "32px"
+			}
+	}
+]

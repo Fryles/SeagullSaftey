@@ -64,6 +64,67 @@ function Node(
 	this.spawn = function () {
 		$("#seagullContainer").append(this.element);
 	};
+	//TODO make this enable for mobule users
+	this.onClicked = function () {
+		this.element.find(".seagullNodeInfo").css("opacity", 1);
+	};
+}
+
+/**
+ *
+ * @param {HTMLElement} n
+ */
+function makeEditable(n) {
+	//get node object from array
+	let nobj = nodes.find((n1) => n1.id == n.attr("id"));
+	if (!nobj) {
+		alert("Bad nodes, please remake or check ids")
+		return;
+	}
+	n.removeClass("seagullNode");
+	n.addClass("seagullNodeEditable");
+	//set opacity
+	n.find(".seagullNodeInfo").css("opacity", 1);
+	//set draggable
+	n.draggable({
+		drag: function (event, ui) {
+			nobj.posx = ui.position.left;
+			nobj.posy = ui.position.top;
+			nobj.update();
+		},
+		distance: 5,
+	});
+	//set click to select
+	n.on("click", function () {
+		if ($(this).hasClass("selected")) {
+			return;
+		}
+		$(".selected").trigger("blur");
+		$(".selected").removeClass("selected");
+		n.addClass("selected");
+		selectedNode = nobj;
+		console.log("selected: ");
+		console.log(selectedNode);
+	});
+	//set double click to edit
+	n.on("dblclick", function () {
+		//TODO make dbl click focus on target
+		n.draggable("disable");
+		//set contenteditable
+		n.find(".seagullNodeName").attr("contenteditable", true);
+		n.find(".seagullNodeDesc").attr("contenteditable", true);
+		n.find(".seagullNodeName").focus();
+	});
+	//set blur to save
+	n.on("blur", function () {
+		//set contenteditable
+		n.find(".seagullNodeName").attr("contenteditable", false);
+		n.find(".seagullNodeDesc").attr("contenteditable", false);
+		//update node
+		n.name = n.find(".seagullNodeName").text();
+		n.desc = n.find(".seagullNodeDesc").text();
+		n.draggable("enable");
+	});
 }
 
 /**
@@ -147,6 +208,24 @@ function spawnEditableNode() {
 	return n;
 }
 
+function loadNodes(nodeJSON) {
+	nodes = [];
+	for (var i = 0; i < nodeJSON.length; i++) {
+		var n = new Node(
+			nodeJSON[i].name,
+			nodeJSON[i].desc,
+			nodeJSON[i].posx,
+			nodeJSON[i].posy,
+			nodeJSON[i].size,
+			nodeJSON[i].floatX,
+			nodeJSON[i].floatY
+		);
+		n.spawn();
+		nodes.push(n);
+	}
+}
+
+
 /**
  * Toggles spawn mode on and off, when toggled back off, prompts to save the json output for all nodes
  * @returns {null}
@@ -215,19 +294,29 @@ function spawnModeToggle() {
 				spawnEditableNode();
 			}
 		});
+		//change all nodes to editable
+		$(".seagullNode").each(function () {
+			console.log($(this));
+			let n = $(this);
+			makeEditable(n);
+		});
 
 		console.log("Spawn mode on");
 	} else {
 		//detach event listeners
 		$(document).off("mousemove");
 		$(document).off("keyup");
+		$("#seagullContainer").off("click");
+		$("#seagullContainer").off("dblclick");
 		//collect all nodes
 		for (var i = 0; i < nodes.length; i++) {
 			delete nodes[i].element;
 			delete nodes[i].update;
 			delete nodes[i].spawn;
 		}
-		download(JSON.stringify(nodes), "nodes.json", "application/json");
+		// download(JSON.stringify(nodes), "nodes.json", "application/json");
+		console.log(nodes);
 		console.log("Spawn mode off");
 	}
 }
+
