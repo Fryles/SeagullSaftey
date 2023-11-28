@@ -43,6 +43,35 @@ function mobileNodeAdjustment(node) {
 	node.update();
 }
 
+// hide/show nodes
+function focusNode(nodeID) {
+	const scale = 1.3;
+	//change opacity of all nodes
+	focusedNode = nodes.find(node => node.id == nodeID);
+	for (var i = 0; i < nodes.length; i++) {
+		if (nodes[i].id != nodeID) {
+			$("#" + nodes[i].id).css("opacity", "0.4");
+		}
+	}
+	//Zoom to the node we want
+	$("#" + nodeID).css("transform", "scale(" + scale + ")");
+	$("#" + nodeID).css("transform-origin", "center");
+	//show info box
+	$("#" + nodeID).find(".seagullNodeInfo").css("opacity", "1");
+
+
+}
+
+function unfocusNodes() {
+	//change opacity of all nodes
+	for (var i = 0; i < nodes.length; i++) {
+		nodes[i].element.css("opacity", "1");
+		nodes[i].element.find(".seagullNodeInfo").css("opacity", "0");
+	}
+	//unzoom all nodes
+	$(".seagullNode").css("transform", "scale(1)");
+
+}
 
 // MAIN
 
@@ -51,4 +80,11 @@ $.getJSON("nodes.json", function (data) {
 	console.log(data);
 	loadNodes(data);
 	checkPosition();
+});
+
+//bind click to unfocus
+$(document).on("click", function (e) {
+	if (e.target.id == "seagullContainer") {
+		unfocusNodes(focusedNode.id);
+	}
 });

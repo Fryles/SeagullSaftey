@@ -28,9 +28,11 @@ function Node(
 	this.size = size; //size of the node (width and height)
 	this.floatX = floatX; //x offset of the floating info box
 	this.floatY = floatY; //y offset of the floating info box
-	this.floatCss = {
+	this.infoWidth = 200; //width of the floating info box
+	this.infoStyle = {
 		left: `${this.floatX}px`,
 		top: `${this.floatY}px`,
+		width: `${this.infoWidth}px`,
 	};
 	this.css = {
 		left: `${this.posx}px`,
@@ -45,9 +47,9 @@ function Node(
 	</div>
 	</div>	`);
 	this.element.css(this.css);
-	this.element.find(".seagullNodeInfo").css(this.floatCss);
+	this.element.find(".seagullNodeInfo").css(this.infoStyle);
 	this.update = function () {
-		this.floatCss = {
+		this.infoStyle = {
 			left: `${this.floatX}px`,
 			top: `${this.floatY}px`,
 		};
@@ -58,15 +60,19 @@ function Node(
 			height: `${this.size}px`,
 		};
 		this.element.css(this.css);
-		this.element.find(".seagullNodeInfo").css(this.floatCss);
+		this.element.find(".seagullNodeInfo").css(this.infoStyle);
 	};
 	this.spawn = function () {
 		$("#seagullContainer").append(this.element);
 	};
-	//TODO make this enable for mobule users
 	this.onClicked = function () {
-		this.element.find(".seagullNodeInfo").css("opacity", 1);
+		if (spawnMode) {
+			return;
+		}
+		unfocusNodes();
+		focusNode(this.id);
 	};
+	this.element.on("click", this.onClicked);
 }
 
 /**
@@ -273,6 +279,9 @@ function spawnModeToggle() {
 			nodes[i].name = nodes[i].element.find(".seagullNodeName").text();
 			nodes[i].desc = nodes[i].element.find(".seagullNodeDesc").text();
 			delete nodes[i].element;
+			delete nodes[i].onClicked;
+			delete nodes[i].css;
+			delete nodes[i].infoStyle;
 		}
 		// download(JSON.stringify(nodes), "nodes.json", "application/json");
 		console.log(nodes);
