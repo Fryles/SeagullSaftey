@@ -58,6 +58,8 @@ function focusNode(nodeID) {
 	$("#" + nodeID).css("transform-origin", "center");
 	//show info box
 	$("#" + nodeID).find(".seagullNodeInfo").css("opacity", "1");
+	//set node to be "hovered"
+	focusedNode.element.addClass("focused");
 
 
 }
@@ -70,7 +72,8 @@ function unfocusNodes() {
 	}
 	//unzoom all nodes
 	$(".seagullNode").css("transform", "scale(1)");
-
+	// remove focused class
+	$(".seagullNode").removeClass("focused");
 }
 
 // MAIN

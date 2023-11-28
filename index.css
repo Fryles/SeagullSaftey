@@ -1,7 +1,9 @@
 :root {
-	--overlay-color-1: #7575fa;
-	--overlay-color-2: rgb(134, 220, 231);
+	--grad1: #7575fa;
+	--grad2: rgb(134, 220, 231);
 	--anim-duration: 3s;
+	--focusGrad1: #ff0000;
+	--focusGrad2: #ff00ff;
 }
 body,
 html {
@@ -42,8 +44,8 @@ html {
 	color: #000000;
 	background: linear-gradient(
 		-45deg,
-		var(--overlay-color-1),
-		var(--overlay-color-2)
+		var(--grad1),
+		var(--grad2)
 	);
 	background-size: 400% 400%;
 
@@ -66,21 +68,37 @@ html {
 @keyframes gradAnim {
 	0% {
 		background-position: 42% 0%;
-		box-shadow: 0px 0px 10px 3px var(--overlay-color-2);
+		box-shadow: 0px 0px 10px 3px var(--grad2);
 	}
 	50% {
 		background-position: 59% 100%;
-		box-shadow: 0px 0px 10px 3px var(--overlay-color-1);
+		box-shadow: 0px 0px 10px 3px var(--grad1);
 	}
 	100% {
 		background-position: 42% 0%;
-		box-shadow: 0px 0px 10px 3px var(--overlay-color-2);
+		box-shadow: 0px 0px 10px 3px var(--grad2);
 	}
 }
 
-.seagullNode:hover {
+@keyframes focusedAnim {
+	0% {
+		background-position: 42% 0%;
+		box-shadow: 0px 0px 10px 3px var(--focusGrad2);
+	}
+	50% {
+		background-position: 59% 100%;
+		box-shadow: 0px 0px 10px 3px var(--focusGrad1);
+	}
+	100% {
+		background-position: 42% 0%;
+		box-shadow: 0px 0px 10px 3px var(--focusGrad2);
+	}
+}
+
+
+.seagullNode:hover:not(.focused) {
 	animation: gradAnim var(--anim-duration) ease infinite;
-	transform: scale(1.1);
+	transform: scale(1);
 }
 
 .seagullNode:hover .seagullNodeInfo {
@@ -104,6 +122,17 @@ html {
 
 .selected {
 	border: 3px solid rgb(209, 129, 142);
+}
+
+.focused {
+	background: linear-gradient(
+		-45deg,
+		var(--focusGrad1),
+		var(--focusGrad2)
+	);
+	background-size: 400% 400%;
+	animation: focusedAnim var(--anim-duration) ease infinite;
+
 }
 
 .seagullNodeName {
