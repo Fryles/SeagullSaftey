@@ -8,16 +8,7 @@
 			"size": 32,
 			"floatX": 70,
 			"floatY": -40,
-			"floatCss": {
-					"left": "70px",
-					"top": "-40px"
-			},
-			"css": {
-					"left": "599.921875px",
-					"top": "88.59375px",
-					"width": "32px",
-					"height": "32px"
-			}
+			"infoWidth": 200
 	},
 	{
 			"id": "seagullNode1",
@@ -28,16 +19,7 @@
 			"size": 32,
 			"floatX": -80,
 			"floatY": -40,
-			"floatCss": {
-					"left": "-80px",
-					"top": "-40px"
-			},
-			"css": {
-					"left": "308.99999999999994px",
-					"top": "108.00000000000001px",
-					"width": "32px",
-					"height": "32px"
-			}
+			"infoWidth": 200
 	},
 	{
 			"id": "seagullNode2",
@@ -48,15 +30,6 @@
 			"size": 32,
 			"floatX": -70,
 			"floatY": -60,
-			"floatCss": {
-					"left": "-70px",
-					"top": "-60px"
-			},
-			"css": {
-					"left": "43px",
-					"top": "511px",
-					"width": "32px",
-					"height": "32px"
-			}
+			"infoWidth": 200
 	}
 ]
