@@ -1,6 +1,6 @@
-# Seagull Clicker (name wip)
+# Seagull Saftey
 
-A prject created for ART101 by Group 2
+A project created for ART101 by Group 2
 
 ## Demo
 
@@ -9,14 +9,11 @@ A prject created for ART101 by Group 2
 ## Features
 
 - Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
-
+- Customizable "buttons"
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://i.ibb.co/YtBPgSr/seag.png))
 
 ## Feedback
 
-If you have any feedback, please create a new issue in the repo. Thank you.
+If you have any feedback, please create a new issue in the repo, thanks!
