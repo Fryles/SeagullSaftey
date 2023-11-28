@@ -5,65 +5,6 @@
 	--focusGrad1: #ff0000;
 	--focusGrad2: #ff00ff;
 }
-body,
-html {
-	font-family: "Nunito", sans-serif;
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-}
-
-#seagullContainer {
-	position: relative;
-	z-index: 1;
-	width: min-content;
-	margin: 0 auto;
-	height: 100vh;
-	user-select: none;
-}
-
-#seagull {
-	position: relative;
-	width: 700px;
-	z-index: -1;
-	transition: all 0.4s ease;
-	pointer-events: none;
-	user-select: none;
-}
-.seagullNode {
-	position: absolute;
-	cursor: pointer;
-	border-radius: 50%;
-	text-decoration: none;
-	z-index: 5;
-
-	transform: scale(0.8);
-
-	color: #000000;
-	background: linear-gradient(
-		-45deg,
-		var(--grad1),
-		var(--grad2)
-	);
-	background-size: 400% 400%;
-
-
-	transition: all 0.6s ease;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-@media screen and (max-width: 700px) {
-	#seagull {
-		margin-top: 50px;
-		width: 390px;
-	}
-
-}
-
 
 @keyframes gradAnim {
 	0% {
@@ -95,13 +36,69 @@ html {
 	}
 }
 
+body,
+html {
+	font-family: "Nunito", sans-serif;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+#seagullContainer {
+	position: relative;
+	z-index: 1;
+	width: min-content;
+	margin: 0 auto;
+	height: 100vh;
+	user-select: none;
+}
+
+#seagull {
+	position: relative;
+	width: 700px;
+	z-index: -1;
+	transition: all 0.4s ease;
+	pointer-events: none;
+	user-select: none;
+}
+.seagullNode {
+	position: absolute;
+	cursor: pointer;
+	border-radius: 50%;
+	z-index: 5;
+	transform: scale(0.8);
+	color: #000000;
+	background: linear-gradient(
+		-45deg,
+		var(--grad1),
+		var(--grad2)
+	);
+	background-size: 400% 400%;
+	transition: all 0.6s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+	#seagull {
+		margin-top: 50px;
+		width: 390px;
+	}
+
+}
+
+
+
 
 .seagullNode:hover:not(.focused) {
 	animation: gradAnim var(--anim-duration) ease infinite;
 	transform: scale(1);
 }
 
-.seagullNode:hover .seagullNodeInfo {
+.seagullNode:hover:not(.focused) .seagullNodeInfo {
 	opacity: 1;
 }
 

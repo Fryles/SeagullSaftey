@@ -47,7 +47,7 @@ function mobileNodeAdjustment(node) {
 function focusNode(nodeID) {
 	const scale = 1.3;
 	//change opacity of all nodes
-	focusedNode = nodes.find(node => node.id == nodeID);
+	let focusedNode = nodes.find(node => node.id == nodeID);
 	for (var i = 0; i < nodes.length; i++) {
 		if (nodes[i].id != nodeID) {
 			$("#" + nodes[i].id).css("opacity", "0.4");
@@ -66,14 +66,13 @@ function focusNode(nodeID) {
 
 function unfocusNodes() {
 	//change opacity of all nodes
-	for (var i = 0; i < nodes.length; i++) {
-		nodes[i].element.css("opacity", "1");
-		nodes[i].element.find(".seagullNodeInfo").css("opacity", "0");
-	}
+		$(".seagullNode").css("opacity", "");
+		$(".seagullNode").find(".seagullNodeInfo").css("opacity", "");
 	//unzoom all nodes
 	$(".seagullNode").css("transform", "scale(1)");
 	// remove focused class
 	$(".seagullNode").removeClass("focused");
+	//remov infobox opacity
 }
 
 // MAIN
@@ -88,6 +87,6 @@ $.getJSON("nodes.json", function (data) {
 //bind click to unfocus
 $(document).on("click", function (e) {
 	if (e.target.id == "seagullContainer") {
-		unfocusNodes(focusedNode.id);
+		unfocusNodes();
 	}
 });
