@@ -73,7 +73,6 @@ function Node(
 		}
 		//get obj from id
 		let nobj = nodes.find((n) => n.id == $(this).attr("id"));
-		alert(nobj.link);
 		window.location.href = nobj.link;
 	};
 
