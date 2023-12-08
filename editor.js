@@ -18,7 +18,8 @@ function Node(
 	posy = 0,
 	size = 24,
 	floatX = 0,
-	floatY = 0
+	floatY = 0,
+	link = window.location.href
 ) {
 	this.id = nodeIdBase + nodeCount++; //id of the node
 	this.name = name; //name of the node
@@ -29,6 +30,7 @@ function Node(
 	this.floatX = floatX; //x offset of the floating info box
 	this.floatY = floatY; //y offset of the floating info box
 	this.infoWidth = 200; //width of the floating info box
+	this.link = link; //link to the reference of data
 	this.infoStyle = {
 		left: `${this.floatX}px`,
 		top: `${this.floatY}px`,
@@ -69,9 +71,12 @@ function Node(
 		if (spawnMode) {
 			return;
 		}
-		unfocusNodes();
-		focusNode(this.id);
+		//get obj from id
+		let nobj = nodes.find((n) => n.id == $(this).attr("id"));
+		alert(nobj.link);
+		window.location.href = nobj.link;
 	};
+
 	this.element.on("click", this.onClicked);
 }
 
@@ -83,9 +88,8 @@ function makeEditable(n) {
 	//get node object from array
 	let nobj = nodes.find((n1) => n1.id == n.attr("id"));
 
-
 	if (!nobj) {
-		alert("Bad nodes, please remake or check ids")
+		alert("Bad nodes, please remake or check ids");
 		return;
 	}
 	n.removeClass("seagullNode");
@@ -133,7 +137,6 @@ function makeEditable(n) {
 		n.desc = n.find(".seagullNodeDesc").text();
 		n.draggable("enable");
 	});
-
 }
 
 /**
@@ -181,14 +184,14 @@ function loadNodes(nodeJSON) {
 			nodeJSON[i].posy,
 			nodeJSON[i].size,
 			nodeJSON[i].floatX,
-			nodeJSON[i].floatY
+			nodeJSON[i].floatY,
+			nodeJSON[i].link
 		);
 		n.spawn();
 		nodes.push(n);
 	}
 	nodeCount = nodes.length;
 }
-
 
 /**
  * Toggles spawn mode on and off, when toggled back off, prompts to save the json output for all nodes
@@ -283,9 +286,8 @@ function spawnModeToggle() {
 			delete nodes[i].css;
 			delete nodes[i].infoStyle;
 		}
-		// download(JSON.stringify(nodes), "nodes.json", "application/json");
+		download(JSON.stringify(nodes), "nodes.json", "application/json");
 		console.log(nodes);
 		console.log("Spawn mode off");
 	}
 }
-
