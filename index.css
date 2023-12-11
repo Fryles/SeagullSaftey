@@ -31,7 +31,13 @@ html {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
-	overflow-y: hidden ;
+	overflow-y: hidden;
+	background-image: url(https://cdn.discordapp.com/attachments/1166208910332547126/1183673039649525780/IMG_0352.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-color: rgba(255, 255, 255, 0.342);
+  background-blend-mode: screen;
 }
 
 #logo{
