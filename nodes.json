@@ -63,8 +63,8 @@
 			"id": "seagullNode5",
 			"name": "Eyes",
 			"desc": " Seagulls have a special adaptation that allows them to see ultraviolet light!",
-			"posx": 393.1875,
-			"posy": 79.1875,
+			"posx": 440.48748779296875,
+			"posy": 25.487503051757812,
 			"size": 32,
 			"floatX": 220,
 			"floatY": 70,
@@ -93,7 +93,7 @@
 			"floatX": 180,
 			"floatY": 20,
 			"infoWidth": 200,
-			"link": "http://127.0.0.1:5500/"
+			"link": "https://en.wikipedia.org/wiki/Keel_(bird_anatomy)"
 	},
 	{
 			"id": "seagullNode8",
@@ -105,6 +105,18 @@
 			"floatX": -230,
 			"floatY": -40,
 			"infoWidth": 200,
-			"link": "http://127.0.0.1:5500/"
+			"link": "https://gilligalloubird.com/blogs/blog/what-is-a-bird-s-mantle"
+	},
+	{
+			"id": "seagullNode9",
+			"name": "Seagulls Diet",
+			"desc": "Generally, they are omnivorous, meaning they eat both plants and animals. Seagulls will eat just about anything they can find, so their diet depends on what is available in their environment. In coastal areas, seagulls eat fish, crustaceans, mollusks, insects, and other marine life. They are also known to scavenge for food, meaning taking it from garbage cans, dumpsters, and stealing it from people on the beach.",
+			"posx": 482.38751220703125,
+			"posy": 84.38751220703125,
+			"size": 24,
+			"floatX": 190,
+			"floatY": 150,
+			"infoWidth": 200,
+			"link": "https://birdfact.com/articles/what-do-seagulls-eat"
 	}
 ]
