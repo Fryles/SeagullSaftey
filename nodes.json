@@ -1,35 +1,48 @@
 [
 	{
-			"id": "seagullNode0",
-			"name": "Beak",
-			"desc": "Eats children",
-			"posx": 599.921875,
-			"posy": 88.59375,
-			"size": 32,
-			"floatX": 70,
-			"floatY": -40,
-			"infoWidth": 200
+		"id": "seagullNode0",
+		"name": "Beak",
+		"desc": "Eats children",
+		"link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+		"posx": 599.921875,
+		"posy": 88.59375,
+		"size": 32,
+		"floatX": 70,
+		"floatY": -40,
+		"infoWidth": 200
 	},
 	{
-			"id": "seagullNode1",
-			"name": "Head",
-			"desc": "mstery...",
-			"posx": 308.99999999999994,
-			"posy": 108.00000000000001,
-			"size": 32,
-			"floatX": -80,
-			"floatY": -40,
-			"infoWidth": 200
+		"id": "seagullNode1",
+		"name": "Head",
+		"desc": "mstery...",
+		"posx": 308.99999999999994,
+		"posy": 108.00000000000001,
+		"size": 32,
+		"floatX": -80,
+		"floatY": -40,
+		"infoWidth": 200
 	},
 	{
-			"id": "seagullNode2",
-			"name": "Tail",
-			"desc": "Weapon of mass destruction",
-			"posx": 43,
-			"posy": 511,
-			"size": 32,
-			"floatX": -70,
-			"floatY": -60,
-			"infoWidth": 200
+		"id": "seagullNode2",
+		"name": "Tail",
+		"desc": "Weapon of mass destruction",
+		"posx": 43,
+		"posy": 511,
+		"size": 32,
+		"floatX": -70,
+		"floatY": -60,
+		"infoWidth": 200
+	},
+	{
+		"id": "seagullNode3",
+		"name": "Wing",
+		"desc": "Seagulls, like many birds, have hollow bones in their wings. Wing spans range from  2-6 feet, depending on species. Click me to learn more about bird wings!",
+		"link": "https://www.dkfindout.com/us/animals-and-nature/birds/inside-wing/",
+		"posx": 341,
+		"posy": 375,
+		"size": 24,
+		"floatX": 190,
+		"floatY": 0,
+		"infoWidth": 200
 	}
 ]
