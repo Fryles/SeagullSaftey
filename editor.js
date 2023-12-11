@@ -78,20 +78,23 @@ function Node(
 		}
 		//get obj from id
 		let nobj = nodes.find((n) => n.id == $(this).attr("id"));
-		window.location.href = nobj.link;
+		if (!mobile) {
+			window.location.href = nobj.link;}
 	};
 
 	this.element.on("click", this.onClicked);
 	this.element.on("mouseenter", function () {
 		focusNode($(this).attr("id"));
 	});
-	this.element.on("touchenter", function () {
+	this.element.on("touchstart", function () {
 		focusNode($(this).attr("id"));
-	});
+	}
+	);
+
 	this.element.on("mouseleave", function () {
 		unfocusNodes();
 	});
-	this.element.on("touchleave", function () {
+	this.element.on("touchend", function () {
 		unfocusNodes();
 	});
 }
