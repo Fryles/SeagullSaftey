@@ -1,5 +1,6 @@
 // Main javascript file for the infographic
-// Myles Marr - ART101 - Fall 2023
+// Authored by Myles Marr for ART101 - Fall 2023
+// :)
 // 11/24/2023
 
 // Global variables
@@ -44,7 +45,7 @@ function mobileNodeAdjustment(node) {
 
 // hide/show nodes
 function focusNode(nodeID) {
-	const scale = 1.3;
+	const scale = 1.1;
 	//change opacity of all nodes
 	let focusedNode = nodes.find(node => node.id == nodeID);
 	for (var i = 0; i < nodes.length; i++) {

@@ -76,6 +76,12 @@ function Node(
 	};
 
 	this.element.on("click", this.onClicked);
+	this.element.on("mouseenter", function () {
+		focusNode($(this).attr("id"));
+	});
+	this.element.on("mouseleave", function () {
+		unfocusNodes();
+	});
 }
 
 /**

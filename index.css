@@ -2,8 +2,8 @@
 	--grad1: #7575fa;
 	--grad2: rgb(134, 220, 231);
 	--anim-duration: 3s;
-	--focusGrad1: #ff0000;
-	--focusGrad2: #ff00ff;
+	--focusGrad1: #7575fa;
+	--focusGrad2: #8bdbf3;
 }
 
 @keyframes gradAnim {
@@ -21,20 +21,7 @@
 	}
 }
 
-@keyframes focusedAnim {
-	0% {
-		background-position: 42% 0%;
-		box-shadow: 0px 0px 10px 3px var(--focusGrad2);
-	}
-	50% {
-		background-position: 59% 100%;
-		box-shadow: 0px 0px 10px 3px var(--focusGrad1);
-	}
-	100% {
-		background-position: 42% 0%;
-		box-shadow: 0px 0px 10px 3px var(--focusGrad2);
-	}
-}
+
 
 body,
 html {
@@ -101,7 +88,7 @@ html {
 
 
 
-.seagullNode:hover {
+.seagullNode:hover{
 	animation: gradAnim var(--anim-duration) ease infinite;
 	transform: scale(1);
 }
@@ -128,6 +115,7 @@ html {
 
 .seagullNodeEditable {
 	border: 1px solid #000000;
+	visibility: visible;
 	position: absolute;
 	cursor: pointer;
 	border-radius: 50%;
@@ -145,15 +133,9 @@ html {
 	border: 3px solid rgb(209, 129, 142);
 }
 
-.focused {
-	background: linear-gradient(
-		-45deg,
-		var(--focusGrad1),
-		var(--focusGrad2)
-	);
-	background-size: 400% 400%;
-	animation: focusedAnim var(--anim-duration) ease infinite;
-
+.seagullNodeEditable .seagullNodeInfo {
+	visibility: visible;
+	opacity: 1;
 }
 
 .seagullNodeName {
