@@ -1,5 +1,5 @@
 // Main javascript file for the infographic
-// Group 2 - ART101 - Fall 2023
+// Myles Marr - ART101 - Fall 2023
 // 11/24/2023
 
 // Global variables
@@ -8,9 +8,8 @@ mobile = false;
 // the nodes array has been declared in editor.js
 
 
-/**
- * This function updates the global media query variable
- */
+// This function updates the global media query variable
+
 function checkPosition() {
 	if (window.matchMedia('(max-width: 700px)').matches && !mobile) {
 		//if we're mobile and we weren't before

@@ -34,7 +34,6 @@ function Node(
 	this.infoStyle = {
 		left: `${this.floatX}px`,
 		top: `${this.floatY}px`,
-		width: `${this.infoWidth}px`,
 	};
 	this.css = {
 		left: `${this.posx}px`,

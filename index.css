@@ -51,7 +51,7 @@ html {
   margin-left: auto;
   margin-right: auto;
 	width: 60vw;
-	max-width: 500px;
+	max-width: 350px;
 }
 
 #seagullContainer {
@@ -101,12 +101,28 @@ html {
 
 
 
-.seagullNode:hover:not(.focused) {
+.seagullNode:hover {
 	animation: gradAnim var(--anim-duration) ease infinite;
 	transform: scale(1);
 }
 
-.seagullNode:hover:not(.focused) .seagullNodeInfo {
+
+.seagullNodeInfo {
+	flex-shrink: 0;
+	display: flex;
+	visibility: hidden;
+	position: relative;
+	width: 250px;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: visibility 0.7s, opacity 1s ease;
+	opacity: 0;
+}
+
+.seagullNode:hover .seagullNodeInfo {
+	visibility: visible;
 	opacity: 1;
 }
 
@@ -148,14 +164,3 @@ html {
 	font-size: 1em;
 }
 
-.seagullNodeInfo {
-	display: flex;
-	position: relative;
-	width: 20rem;
-	height: 100%;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	transition: opacity 0.4s ease;
-	opacity: 0;
-}
