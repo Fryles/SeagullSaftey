@@ -1,5 +1,6 @@
-// Utility javascript for editing nodes
-// Group 2 - ART101 - Fall 2023
+// Editor and base node code
+// Authored by Myles Marr for ART101 - Fall 2023
+// :)
 // 11/24/2023
 
 // Global declarations
@@ -41,6 +42,7 @@ function Node(
 		width: `${this.size}px`,
 		height: `${this.size}px`,
 	};
+	//create the element with HTML and set CSS
 	this.element = $(`<div id="${this.id}" class="seagullNode">
 	<div class="seagullNodeInfo">
 	<div class="seagullNodeName">${this.name}</div>
@@ -49,6 +51,8 @@ function Node(
 	</div>	`);
 	this.element.css(this.css);
 	this.element.find(".seagullNodeInfo").css(this.infoStyle);
+
+	//update the node's position and size incase of screen resize
 	this.update = function () {
 		this.infoStyle = {
 			left: `${this.floatX}px`,
@@ -63,9 +67,11 @@ function Node(
 		this.element.css(this.css);
 		this.element.find(".seagullNodeInfo").css(this.infoStyle);
 	};
+	//spawn the node
 	this.spawn = function () {
 		$("#seagullContainer").append(this.element);
 	};
+	//onclick function
 	this.onClicked = function () {
 		if (spawnMode) {
 			return;
@@ -79,7 +85,13 @@ function Node(
 	this.element.on("mouseenter", function () {
 		focusNode($(this).attr("id"));
 	});
+	this.element.on("touchenter", function () {
+		focusNode($(this).attr("id"));
+	});
 	this.element.on("mouseleave", function () {
+		unfocusNodes();
+	});
+	this.element.on("touchleave", function () {
 		unfocusNodes();
 	});
 }

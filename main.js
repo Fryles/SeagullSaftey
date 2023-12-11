@@ -35,10 +35,17 @@ function mobileNodeAdjustment(node) {
 		node.posx = node.posx * 390/700
 		node.posy = node.posy * 390/700
 		node.posy = node.posy + 40;
+		node.floatX = node.floatX * 390 / 700
+		node.floatY = node.floatY * 390 / 700
+
+		node.size = 24;
 	} else {
 		node.posy = node.posy - 40;
 		node.posx = node.posx * 700/390
-		node.posy = node.posy * 700/390
+		node.posy = node.posy * 700 / 390
+		node.floatX = node.floatX * 700 / 390
+		node.floatY = node.floatY * 700 / 390
+		node.size = 32;
 	}
 	node.update();
 }
@@ -82,11 +89,4 @@ $.getJSON("nodes.json", function (data) {
 	console.log(data);
 	loadNodes(data);
 	checkPosition();
-});
-
-//bind click to unfocus
-$(document).on("click", function (e) {
-	if (e.target.id == "seagullContainer") {
-		unfocusNodes();
-	}
 });

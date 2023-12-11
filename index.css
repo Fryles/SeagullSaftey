@@ -1,6 +1,6 @@
 :root {
-	--grad1: #7575fa;
-	--grad2: rgb(134, 220, 231);
+	--grad1: #a483ff;
+	--grad2: #96fce2;
 	--anim-duration: 3s;
 	--focusGrad1: #7575fa;
 	--focusGrad2: #8bdbf3;
@@ -25,6 +25,7 @@
 
 body,
 html {
+	touch-action:none;
 	font-family: "Nunito", sans-serif;
 	height: 100%;
 	width: 100%;
@@ -84,13 +85,7 @@ html {
 	align-items: center;
 }
 
-@media screen and (max-width: 700px) {
-	#seagull {
-		margin-top: 50px;
-		width: 390px;
-	}
 
-}
 
 
 
@@ -151,5 +146,20 @@ html {
 }
 .seagullNodeDesc {
 	font-size: 1em;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+	#seagull {
+		margin-top: 50px;
+		width: 390px;
+	}
+	.seagullNodeInfo {
+		font-size: 0.5rem;
+		width: 110px;
+	}
+
 }
 
