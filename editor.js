@@ -16,7 +16,7 @@ function Node(
 	desc,
 	posx = 0,
 	posy = 0,
-	size = 24,
+	size = 32,
 	floatX = 0,
 	floatY = 0,
 	link = window.location.href

@@ -43,7 +43,7 @@
 			"posy": 329.921875,
 			"size": 32,
 			"floatX": 290,
-			"floatY": 0,
+			"floatY": 10,
 			"infoWidth": 200,
 			"link": "https://www.dkfindout.com/us/animals-and-nature/birds/inside-wing/"
 	},
@@ -66,7 +66,7 @@
 			"posx": 393.1875,
 			"posy": 79.1875,
 			"size": 32,
-			"floatX": 210,
+			"floatX": 220,
 			"floatY": 70,
 			"infoWidth": 200,
 			"link": "https://www.sciencedirect.com/science/article/abs/pii/S0065345408601059"
@@ -82,5 +82,29 @@
 			"floatY": 110,
 			"infoWidth": 200,
 			"link": "https://oar.princeton.edu/rt4ds/file/2372/imperfectly.pdf"
+	},
+	{
+			"id": "seagullNode7",
+			"name": "Keel",
+			"desc": "Seagulls, like many other bird species, have a specialized chest bone called a \"keel.\" The keel is a large, bony ridge along the center of the breastbone, and it serves as an anchor for the bird's powerful flight muscles. The development of a keel is essential for birds that are strong fliers!",
+			"posx": 462.70001220703125,
+			"posy": 241.70001220703125,
+			"size": 32,
+			"floatX": 180,
+			"floatY": 20,
+			"infoWidth": 200,
+			"link": "http://127.0.0.1:5500/"
+	},
+	{
+			"id": "seagullNode8",
+			"name": "Mantle",
+			"desc": "Seagulls have a waterproof patch of feathers on their upper back called the mantle, coated with oil from a preen gland. This waterproofing helps them stay buoyant on water and protects their feathers for efficient flying and swimming.",
+			"posx": 278.1875,
+			"posy": 220.1875,
+			"size": 32,
+			"floatX": -230,
+			"floatY": -40,
+			"infoWidth": 200,
+			"link": "http://127.0.0.1:5500/"
 	}
 ]
