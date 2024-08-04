@@ -11,6 +11,6 @@ You can also click on a node/part to be redirected to websites to learn more abo
  
 ## Demo
 
-[Click here to view the project](https://fryles.github.io/art101final/)
+[Click here to view the project](https://fryles.github.io/SeagullSaftey/)
 
 
